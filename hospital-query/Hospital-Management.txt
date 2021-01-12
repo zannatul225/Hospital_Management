@@ -1,0 +1,251 @@
+create database Hospital;
+
+use Hospital;
+create table Doctor(
+D_ID varchar(20) not null,
+D_Name varchar(15) not null,
+Qualification varchar(15) not null,
+D_Phone_no varchar(12) not null,
+D_Address varchar(55),
+primary key(D_ID)
+);
+
+insert into Doctor(D_ID,D_Name,Qualification,D_Phone_no,D_Address)
+values('001','Dr.Shafiq Ahmed Khan','MBBS,FCPS,Dermatology','01111111111','Mohammadpur,Dhaka'),
+('002','Dr.Roksana','Opthalmology','01222222222','Nikunjo,Dhaka'),
+('003','Dr.Abdul Bari Mollick','DDS,Dentistry','01333333333','Dhaka Cantonment'),
+('004','Dr.Tawsif','MBBS,FCPS,Medicine','01666666666','O.R Nizam Road,Chattogram'),
+('005','Dr.Tasneem Kamal','MBBS,FCPS,Surgery','01777777777','Chawkbazar,Chattogram'),
+('006','Dr.Tahiat Tabassum','MBBS,FCPS,Anesthesiology','01888888888','Mirpur DOHS,Mirpur,Dhaka');
+
+
+
+create table Wards_and_Rooms(
+Room_No varchar(10) not null,
+Ward varchar(10) not null,
+Floor varchar(10) not null,
+Room varchar(10),
+primary key(Room_No)
+);
+
+insert into Wards_and_Rooms(Room_No,Ward,Floor,Room)
+values('102','Family','1st-floor','Allocated'),
+('101','ICU','1st-floor','Allocated'),
+('103','Family','1st-floor','Allocated'),
+('201','ICU','2nd-floor','NULL'),
+('203','Family','2nd-floor','Allocated'),
+('301','ICU','3rd-floor','NULL'),
+('202','Family','2nd-floor','Allocated'),
+('401','ICU','4th-floor','NULL'),
+('302','Family','3rd-floor','Allocated'),
+('303','Family','3rd-floor','NULL'),
+('501','ICU','5th-floor','NULL'),
+('402','Family','4th-floor','Allocated'),
+('601','ICU','6th-floor','NULL'),
+('403','Family','4th-floor','NULL'),
+('502','Single','5th-floor','NULL'),
+('503','Family','5th-floor','Allocated'),
+('602','single','6th-floor','NULL'),
+('603','Family','6th-floor','Allocated'),
+('703','Single','7th-floor','NULL'),
+('803','Family','8th-floor','Allocated'),
+('702','Family','7th-floor','Allocated'),
+('802','Single','8th-floor','NULL'),
+('903','Single ','9th-floor','NULL'),
+('902','Family','9th-floor','Allocated'),
+('901','Single','9th-floor','Allocated');
+
+
+create table Patient(
+P_ID varchar(20) not null,
+P_Name varchar(15) not null,
+P_Phone_no varchar(12) not null,
+P_Address varchar(55) not null,
+Test_Report varchar(55) not null,
+D_ID varchar(20) not null,
+Room_No varchar(10) not null,
+primary key(P_ID),
+foreign key(Room_No) references Wards_and_Rooms(Room_No),
+foreign key(D_ID) references Doctor(D_ID)
+);
+
+insert into Patient(P_ID,P_Name,P_Phone_no,P_Address,Test_Report,D_ID,Room_No)
+values('001','Sazzad Saran','02111111111','Mirpur DOHS,Mirpur,Dhaka','Positive','006','101'),
+('002','Mir Akil','02222222222','Dhanmondi-19,Dhanmondi,Dhaka','Positive','004','102'),
+('003','Ahmed Raiyan','02333333333','Azimpur,Dhaka','Positive','001','803'),
+('004','Anindya Barua','02444444444','Gulshan-2,Dhaka','Positive','002','902'),
+('005','Mumin Ul Bari','02555555555','Mirpur DOHS,Mirpur,Dhaka','Negative','005','102'),
+('006','Nafiz Al Asad','02666666666','Mirpur-12,Mirpur,Dhaka','Positive','006','902'),
+('007','Rafi Islam','02777777777','Mirpur-1,Mirpur,Dhaka','Negative','001','603'),
+('008','Raisa Tahsin','02888888888','Prem Bagan,Sector-7,Uttara,Dhaka','Positive','003','402'),
+('009','Sadia Afreen','02999999999','Khilgaon Taltola,Khilgaon,Dhaka','Negative','002','103'),
+('010','Tahmid Fahim','02898989898','Central-road,Dhaka','Negative','005','103'),
+('011','Farhan Naser','02456634546','Mohakhali,Dhaka','Positive','002','302'),
+('012','Shaznin Sultana','02234567898','Dhanmondi-19,Dhanmondi,Dhaka','Negative','004','202'),
+('013','Samia Ahmed','02123412341','Prem Bagan,Sector-5,Uttara,Dhaka','Positive','001','503'),
+('014','Pranto Mahmud','02566556645','Jhigatola,Dhaka','Negative','006','803'),
+('015','Samir Chowdhury','02722781816','Panthopath,Dhaka','Negative','001','702'),
+('016','Abrar Mannan','02030406483','Baily Road,Dhaka','Positive','005','302'),
+('017','Zeba Labiba','02436012123','Dhanmondi-27,Dhanmondi,Dhaka','Positive','002','603'),
+('018','Tania Akkas','02436790125','Mirpur-12,Mirpur,Dhaka','Positive','003','702'),
+('019','Ziad Mohib','02230004560','Banani,Dhaka','Positive','003','901'),
+('020','Ismate Jahan','02000343221','Mohakhali,Dhaka','Negative','004','402'),
+('021','Zannatul Ferdous','021114442','Jhigatoal,Dhaka','Positive','002','203'),
+('022','Rakiba Akhter','025666670','Azimpur,Dhaka','Positive','001','603'),
+('023','Ishrar Mannan','02222422342','Banani,Dhaka','Positive','004','503'),
+('024','Israt Jahan','02456783215','Mirpur-10,Mirpur,Dhaka','Positive','005','202'),
+('025','Rimon Khan','02908700345','Mirpur-12,Mirpur,Dhaka','Positive','006','203');
+
+
+
+
+create table Bills_and_Payment(
+Receipt_No int(10) not null,
+Payment_Status varchar(15) not null,
+Bill int(20) not null,
+primary key(Receipt_no)
+);
+
+insert into Bills_and_Payment(Receipt_No,Payment_Status,Bill)
+values(1001,'Paid',10000 ),
+(1002,'Paid',9000 ),
+(1003,'Paid',800 ),
+(1004,'Not paid',2000 ),
+(1005,'Paid',1000 ),
+(1006,'Not paid',10000 ),
+(1007,'Paid',4000 ),
+(1008,'Paid',10000 ),
+(1009,'Paid',500 ),
+(1010,'Not paid',8000 ),
+(1011,'Paid',1000 ),
+(1012,'Not paid',10000 ),
+(1013,'Paid',6000 ),
+(1014,'Paid',10000 ),
+(1015,'Paid',800 ),
+(1016,'Not paid',3000 ),
+(1017,'Paid',1000 ),
+(1018,'Not paid',10000 ),
+(1019,'Paid',4000 ),
+(1020,'Paid',10000 ),
+(1021,'Not paid',7000 ),
+(1022,'Paid',1000 ),
+(1023,'Not paid',10000 ),
+(1024,'Paid',5000 ),
+(1025,'Paid',8000 );
+
+create table Disease_and_Diagnosis(
+Disease varchar(20) not null,
+Receipt_No int(10) not null,
+P_ID varchar(20) not null,
+foreign key(Receipt_no) references Bills_and_Payment(Receipt_No),
+foreign key(P_ID) references Patient(P_ID)
+);
+
+
+insert into Disease_and_Diagnosis(Disease,Receipt_No,P_ID)
+values('Dengue',1001,'001'),
+('Dengue',1002,'002'),
+('Low BP',1003,'003'),
+('Tuberculosis',1004,'004'),
+('Measles',1005,'005'),
+('Jaundice',1006,'006'),
+('Chicken pox',1007,'007'),
+('Dengue',1008,'008'),
+('Dengue',1009,'009'),
+('Blood Cancer',1010,'010'),
+('Tuberculosis',1011,'011'),
+('Measles',1012,'012'),
+('Jaundice',1013,'013'),
+('Chicken pox',1014,'014'),
+('Dengue',1015,'015'),
+('Dengue',1016,'016'),
+('Low BP',1017,'017'),
+('Tuberculosis',1018,'018'),
+('Measles',1019,'019'),
+('Jaundice',1020,'020'),
+('Chicken pox',1021,'021'),
+('Cancer',1022,'022'),
+('Dengue',1023,'023'),
+('High BP',1024,'024'),
+('Alcer',1025,'025');
+
+
+
+
+
+
+
+
+create table Employee(
+E_ID varchar(20) not null,
+E_Name varchar(15) not null,
+Shift varchar(8),
+Designation varchar(15) not null,
+primary key(E_ID)
+);
+
+insert into Employee(E_ID,E_Name,Shift,Designation)
+values('001','A','Day','Cleaner'),
+('002','B','Night','Cleaner'),
+('003','C','Day','Ward Boy'),
+('004','D','Night','ward Boy'),
+('005','E','Day','Nurse'),
+('006','F','Night','Nurse'),
+('007','G','Day','Nurse'),
+('008','H','Night','Nurse'),
+('009','I','Day','Nurse'),
+('010','J','Night','Nurse'),
+('011','K','Night','Nurse'),
+('012','L','Day','Nurse'),
+('013','M','Night','Medical Assistant'),
+('014','N','Day','Medical Assistant'),
+('015','O','Night','Nurse'),
+('016','P','Day','Nurse'),
+('017','Q','Night','Nurse'),
+('018','R','Day','Nurse'),
+('019','S','Night','Nurse'),
+('020','T','Day','Nurse'),
+('021','U','Night','Nurse'),
+('022','V','Day','Nurse'),
+('023','Y','Night','Nurse'),
+('024','Z','Night','Receptionist'),
+('025','W','Day','Receptionist');
+
+create table Financial_Update(
+Paid_amount int(20) not null,
+Amount_to_be_paid int(20) not null,
+E_Salary int(20) not null,
+D_ID varchar(20) not null,
+Receipt_No int(10) not null,
+E_ID varchar(20) not null,
+foreign key(D_ID) references Doctor(D_ID),
+foreign key(E_ID) references Employee(E_ID),
+foreign key(Receipt_No) references Bills_and_Payment(Receipt_No)
+);
+
+insert into Financial_Update(Paid_amount,Amount_to_be_paid,E_Salary,D_ID,Receipt_No,E_ID)
+values(10000,10000,5000,'006',1001,'001'),
+(10000,10000,5000,'004',1002,'002'),
+(800,800,10000,'001',1003,'003'),
+(0,8000,10000,'002',1004,'004'),
+(1000,1000,15000,'005',1005,'005'),
+(0,10000,10000,'006',1006,'006'),
+(4000,4000,15000,'001',1007,'007'),
+(10000,10000,10000,'003',1008,'008'),
+(10000,10000,15000,'002',1009,'009'),
+(800,800,15000,'005',1010,'010'),
+(0,8000,10000,'002',1011,'011'),
+(1000,1000,15000,'004',1012,'012'),
+(0,10000,20000,'001',1013,'013'),
+(4000,4000,20000,'006',1014,'014'),
+(10000,10000,10000,'005',1015,'015'),
+(10000,10000,25000,'002',1016,'016'),
+(800,800,15000,'002',1017,'017'),
+(0,8000,10000,'003',1018,'018'),
+(1000,1000,15000,'005',1019,'019'),
+(0,10000,10000,'004',1020,'020'),
+(4000,4000,15000,'002',1021,'021'),
+(10000,10000,10000,'001',1022,'022'),
+(0,10000,10000,'004',1023,'023'),
+(4000,4000,25000,'005',1024,'024'),
+(10000,10000,25000,'006',1025,'025');

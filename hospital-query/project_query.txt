@@ -1,0 +1,8 @@
+1. select disease,p_name from disease_and_diagnosis natural join patient 
+where p_id="id";
+ 2.select * from patient where p_id="id";
+3..select * from doctor where D_id="id";
+4..select * from employee where E_id="id";
+
+5. update Wards_and_Rooms set room="allocated" 
+where Room_no="room_no";

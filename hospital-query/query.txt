@@ -1,0 +1,14 @@
+1.doctor: view patient info: 
+select p_Name,Test_Report,Disease,D_ID from patient natural join disease_and_diagnosis
+where P_ID="p-id";
+
+2.employee: own info view:
+select E_Name,Shift,Designation,E_Salary 
+from employee natural join financial_update
+where E_ID="e-id";
+
+3.Admin: view patient:
+select P_Name,P_Phone_No,P_Address,Test_Report,Disease,Bill 
+from patient natural join disease_and_diagnosis natural join Bills_and_payment
+where P_Id="p-id";
+
