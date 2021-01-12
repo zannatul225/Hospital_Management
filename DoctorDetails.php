@@ -46,13 +46,18 @@
           $sql= "SELECT * FROM doctor WHERE category = '".$req."'";
           $result = mysqli_query($db,$sql);
           $check = mysqli_num_rows($result);
+          echo "Found ";
           echo($check);
+          echo " results!<br>";
+          echo "Showing results for ";
+          echo($req);
+          echo ":";
           echo "<table>
               <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Age</th>
-                  <th>Hometown</th>
+                  <th>Doctor's Name</th>
+                  <th>Qualification</th>
+                  <th>Contact</th>
+                  <th>Address</th>
               </tr>";
           while($row = mysqli_fetch_array($result)) {
             echo "<tr>";
