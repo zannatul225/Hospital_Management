@@ -5,7 +5,7 @@
         <title>About Page</title>
         <style media="screen">
           html,body{
-            width: 100%;
+            width: 90%;
             height: 80%;
             font-size: 14px;
             font-weight: normal;
@@ -21,7 +21,7 @@
             height: 100%;
             }
             div {
-    					width: 100px;
+    					width: 100%;
     					height: 100px;
     					background: red;
     					transition: width 2s, height 2s, transform 2s;
@@ -36,8 +36,8 @@
             <center><font size=10cn><b><u>About Hospital</u><b></font></center>
             </div>
 
-                <div style="margin-top: 1%; margin-left: 20%; margin-right: 20%; font-size: 45px;font-weight: bold">
-                  <center>Welcome to Care and Cure Hospital. <br>
+                <div style="margin-top: 1%; font-size: 20px;font-weight: bold">
+                  <center>Welcome to Care and Cure Hospital.<br>
                   "Save lives, Save Humanity."</center>
 
                 </div>
