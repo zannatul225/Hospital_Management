@@ -26,6 +26,22 @@
             {
               $req='Nephrologist';
             }
+          if($q == 3)
+            {
+              $req='Cardiologist';
+            }
+          if($q == 4)
+            {
+              $req='Orthopedist';
+            }
+          if($q == 5)
+            {
+              $req='Gynecologist';
+            }
+            if($q == 6)
+            {
+              $req='Pediatrician';
+            }
           include 'db.php';
           $sql= "SELECT * FROM doctor WHERE category = '".$req."'";
           $result = mysqli_query($db,$sql);
