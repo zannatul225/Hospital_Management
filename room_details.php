@@ -15,24 +15,45 @@ $check = mysqli_num_rows($res);
         div {
           background-color: lightblue;
         }
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
         </style>
     </head>
     <body>
                 <center><h2> Room details of our hospital </h2></center>
                 <?php
-                if ($check > 0) {
-                  while($row = mysqli_fetch_assoc($res)) {?>
-                    <div style="margin-top: 1%; margin-left:35%; margin-right:35%">
-                      <font size=5cn>
-                    <?php
-                    echo "Room no: " . $row["Room_No"]. " <br>Ward: " . $row["Ward"]. "<br>Floor: "  . $row["Floor"]. "<br>Room: " . $row["Room"]. "<br>";
-                    ?>
-                      </font>
-                  </div>
-                    <?php
-                  }
-                } ?>
-              <br>
+                echo "<table>
+                    <tr>
+                        <th>Room no</th>
+                        <th>Ward</th>
+                        <th>Floor</th>
+                        <th>Room</th>
+                    </tr>";
+                while($row = mysqli_fetch_array($res)) {
+                  echo "<tr>";
+                    echo "<td>" . $row['Room_No'] . "</td>";
+                    echo "<td>" . $row['Ward'] . "</td>";
+                    echo "<td>" . $row['Floor'] . "</td>";
+                    echo "<td>" . $row['Room'] . "</td>";
 
+                  echo "</tr>";
+                }
+                echo "</table>";
+
+                ?>
+              <br>
     </body>
 </html>
