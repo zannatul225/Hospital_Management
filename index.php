@@ -12,7 +12,7 @@
             <center><b><h1 style="color: darkblue; font-family: fantasy; font-size: 250%;">Choose from below to login or click to see the informations</h1></b></center><br>
             <div class="nav">
                 <a href="about.php">About Hospital</a><br>
-                <a href="DoctorDetails.php">About Doctors</a><br>
+                <a href="searchdoctor.php">About Doctors</a><br>
                 <a href="Login.php">Login</a><br>
                 <a href="Register.php">Register</a><br>
 
