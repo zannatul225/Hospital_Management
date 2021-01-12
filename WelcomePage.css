@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+.background{
+
+    background-image: url(../background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 2%;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 24px;
+    font-family: vardana;
+    font-weight: bold;
+    height: 80px;
+    width: 100%;
+    margin: 5px 0;
+    display: inline-block;
+    background-color:azure;
+    color: black;
+    line-height: 80px;
+    text-align: center;
+    border: 2px solid activecaption;
+    transition: 300ms;
+}
+ .nav a:hover{
+    background-color: lightblue;
+    color: white;
+    width: 100%;
+}
+
+.contact
+{
+	background-color: transparent;
+	height: 180px;
+	width: 382px;
+	float: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 18px;
+}
