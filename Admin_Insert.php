@@ -75,11 +75,9 @@ $check = mysqli_num_rows($res);
 
                 while($row = mysqli_fetch_array($result)) {
                   echo "<tr>";
-                    echo "<td>" . $row['D_Name'] . "</td>";
-                    echo "<td>" . $row['Qualification'] . "</td>";
-                    echo "<td>" . $row['D_Phone_no'] . "</td>";
-                    echo "<td>" . $row['D_Address'] . "</td>";
-
+                    echo "<td>" . $row['name'] . "</td>";
+                    echo "<td>" . $row['phone'] . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
                   echo "</tr>";
                 }
 
