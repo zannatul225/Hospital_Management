@@ -10,6 +10,17 @@ include_once 'db.php';
        div {
          background-color: lightblue;
        }
+       table {
+         width: 100%;
+         border-collapse: collapse;
+         }
+
+       table, td, th {
+         border: 1px solid black;
+         padding: 5px;
+         }
+
+         th {text-align: left;}
      </style>
  </head>
  <body bgcolor='GREY'>
@@ -19,20 +30,30 @@ include_once 'db.php';
      $sql="SELECT * FROM patient";
      $res = mysqli_query($db,$sql);
      $check = mysqli_num_rows($res);
+     echo "<table>
+         <tr>
+             <th>Patient ID</th>
+             <th>Patient Name</th>
+             <th>Phone No</th>
+             <th>Address</th>
+             <th>Test Report</th>
+             <th>Doctor ID</th>
+             <th>Room No</th>
+         </tr>";
+      while($row = mysqli_fetch_array($res)) {
+        echo "<tr>";
+          echo "<td>" . $row['P_ID'] . "</td>";
+          echo "<td>" . $row['P_Name'] . "</td>";
+          echo "<td>" . $row['P_Phone_no'] . "</td>";
+          echo "<td>" . $row['P_Address'] . "</td>";
+          echo "<td>" . $row['Test_Report'] . "</td>";
+          echo "<td>" . $row['D_ID'] . "</td>";
+          echo "<td>" . $row['Room_No'] . "</td>";
 
-     if ($check > 0) {
-       while($row = mysqli_fetch_assoc($res)) {?>
-         <div style="margin-top: .5%; margin-left:35%; margin-right:35%; font-size: 20px;font-weight: bold">
+        echo "</tr>";
+         }
+         echo "</table>";
 
-         <?php
-         echo "Patient ID: " . $row["P_ID"]. " <br>Name: " . $row["P_Name"]. "<br>Phone: "
-           . $row["P_Phone_no"]. "<br>Address: " . $row["P_Address"]. "<br>Test Report: "
-           . $row["Test_Report"]. "<br>Doctor ID: " . $row["D_ID"]. "<br>Room no: " . $row["Room_No"]. "<br>";
-         ?>
-       </div>
-       <?php
-     }
-   }
         ?>
         <div style="margin-top: 4%; margin-left:0%; margin-right:0%; font-size: 30px;font-weight: bold">
               <center>Employee details.</center></div>
@@ -40,40 +61,52 @@ include_once 'db.php';
           $sql="SELECT * FROM employee";
           $res = mysqli_query($db,$sql);
           $check = mysqli_num_rows($res);
+          echo "<table>
+              <tr>
+                  <th>Employee ID</th>
+                  <th>Name</th>
+                  <th>Shift</th>
+                  <th>Designation</th>
+              </tr>";
+            while($row = mysqli_fetch_array($res)) {
+              echo "<tr>";
+                echo "<td>" . $row['E_ID'] . "</td>";
+                echo "<td>" . $row['E_Name'] . "</td>";
+                echo "<td>" . $row['Shift'] . "</td>";
+                echo "<td>" . $row['Designation'] . "</td>";
+              echo "</tr>";
+               }
+               echo "</table>";
 
-          if ($check > 0) {
-            while($row = mysqli_fetch_assoc($res)) {?>
-              <div style="margin-top: .5%; margin-left:35%; margin-right:35%; font-size: 20px;font-weight: bold">
-
-              <?php
-              echo "Employee ID: " . $row["E_ID"]. " <br>Name: " . $row["E_Name"]. "<br>Shift: "
-                . $row["Shift"]. "<br>Designation: " . $row["Designation"]. "<br>";
-              ?>
-            </div>
-            <?php
-          }
-        }
              ?>
              <div style="margin-top: 4%; margin-left:0%; margin-right:0%; font-size: 30px;font-weight: bold">
                    <center>Doctor details.</center></div>
+
                <?php
                $sql="SELECT * FROM doctor";
                $res = mysqli_query($db,$sql);
                $check = mysqli_num_rows($res);
-
-               if ($check > 0) {
-                 while($row = mysqli_fetch_assoc($res)) {?>
-                   <div style="margin-top: .5%; margin-left:35%; margin-right:35%; font-size: 20px;font-weight: bold">
-
-                   <?php
-                   echo "Doctor ID: " . $row["D_ID"]. " <br>Name: " . $row["D_Name"]. "<br>Phone: "
-                     . $row["D_Phone_no"]. "<br>Qualification: " . $row["Qualification"]. "<br>Address: "
-                     . $row["D_Address"]. "<br>";
-                   ?>
-                 </div>
-                 <?php
-               }
-             }
-                  ?>
+               echo "<table>
+                     <tr>
+                         <th>Doctor ID</th>
+                         <th>Name</th>
+                         <th>Phone</th>
+                         <th>Qualification</th>
+                         <th>category</th>
+                         <th>Address</th>
+                     </tr>";
+               while($row = mysqli_fetch_array($res)) {
+                   echo "<tr>";
+                     echo "<td>" . $row['D_ID'] . "</td>";
+                     echo "<td>" . $row['D_Name'] . "</td>";
+                     echo "<td>" . $row['D_Phone_no'] . "</td>";
+                     echo "<td>" . $row['Qualification'] . "</td>";
+                     echo "<td>" . $row['category'] . "</td>";
+                     echo "<td>" . $row['D_Address'] . "</td>";
+                   echo "</tr>";
+                      }
+                      echo "</table>";
+                ?>
 
  </body>
+ </html>
