@@ -1,21 +1,3 @@
-<?php
-include_once 'db.php';
-
-session_start();
-if(isset($_SESSION['user'])){
-  $user= $_SESSION['user'];
-}
-  else {
-    header("location: Admin_login.php");
-  }
-
-$sql = "SELECT * FROM login where user='$user';";
-
-$res = mysqli_query($db,$sql);
-$check = mysqli_num_rows($res);
-
-?>
-
 <html>
     <head>
         <script>
@@ -66,24 +48,6 @@ $check = mysqli_num_rows($res);
         </style>
     </head>
     <body text="BLACK" bgcolor ="#8BF7C8">
-
-                <?php
-                $result = mysqli_query($db,$sql);
-                $check = mysqli_num_rows($res);
-                echo($check);
-                echo($req);
-
-                while($row = mysqli_fetch_array($result)) {
-                  echo "<tr>";
-                    echo "<td>" . $row['name'] . "</td>";
-                    echo "<td>" . $row['phone'] . "</td>";
-                    echo "<td>" . $row['email'] . "</td>";
-                  echo "</tr>";
-                }
-
-                 ?>
-
-
         <form action="Admin_Update.php" method="post">
 
               <!--View room information-->

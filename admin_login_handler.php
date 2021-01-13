@@ -17,8 +17,9 @@ if ($check > 0) {
 
   if($user === $get['user'] && $pass === $get['pass'])
   {
+
       $_SESSION['uname'] = $get['name'];
-      header("location: Admin_insert.php");
+      header("location: admin_insert.php");
   }
   else {
     header("location: Admin_login.php");
