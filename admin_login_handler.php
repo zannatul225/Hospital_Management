@@ -19,7 +19,7 @@ if ($check > 0) {
   {
 
       $_SESSION['uname'] = $get['name'];
-      header("location: admin_insert.php");
+      header("location: Admin_insert.php");
   }
   else {
     header("location: Admin_login.php");
