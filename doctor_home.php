@@ -14,7 +14,7 @@ $sql = "SELECT * FROM doctor where D_ID='$d_id';";
 $res = mysqli_query($db,$sql);
 $check = mysqli_num_rows($res);
 
- ?>
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,7 +31,7 @@ $check = mysqli_num_rows($res);
       <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
 
       <p id="demo"></p>
-      
+
       <div style="margin-top: 2%; margin-left:0%; margin-right:0%; font-size: 30px;font-weight: bold">
             <center>Welcome <?php
         if(isset($_SESSION['d_name'])){
