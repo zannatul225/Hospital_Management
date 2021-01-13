@@ -6,7 +6,7 @@
   $user = mysqli_real_escape_string($db, $_POST['user']);
   $pass = mysqli_real_escape_string($db, $_POST['pass']);
 
-  $sql = "SELECT name,user,pass FROM login WHERE user = '$user';";
+  $sql = "SELECT * FROM login WHERE user = '$user';";
 
 
   $res = mysqli_query($db,$sql);
