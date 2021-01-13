@@ -1,3 +1,21 @@
+<?php
+include_once 'db.php';
+
+session_start();
+if(isset($_SESSION['uname'])){
+  $name= $_SESSION['uname'];
+}
+  else {
+    header("location: Admin_login.php");
+  }
+
+$sql = "SELECT * FROM login where name='$name';";
+
+$res = mysqli_query($db,$sql);
+$check = mysqli_num_rows($res);
+
+?>
+
 <html>
     <head>
         <script>
