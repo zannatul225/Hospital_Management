@@ -67,16 +67,13 @@ $check = mysqli_num_rows($res);
     </head>
     <body text="BLACK" bgcolor ="#8BF7C8">
       <?php
-      echo "<table>";
 
       while($row = mysqli_fetch_array($res)) {
-        echo "<tr>";
-          echo "<td>" . $row['name'] . "</td>";
-          echo "<td>" . $row['phone'] . "</td>";
-          echo "<td>" . $row['email'] . "</td>";
-        echo "</tr>";
+          echo  $row['name'] . "<br>";
+          echo "0" . $row['phone'] . "<br>";
+          echo $row['email'];
+
       }
-      echo "</table>";
       ?>
 
         <form action="Admin_Update.php" method="post">
