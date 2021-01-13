@@ -1,5 +1,7 @@
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script>
 function showUser(str) {
   if (str == "") {
@@ -20,6 +22,12 @@ function showUser(str) {
 </head>
 <body>
 
+  <div class="w3-bar w3-black">
+    <a href="index.php" class="w3-bar-item w3-button">Home</a>
+    <a href="about.php" class="w3-bar-item w3-button">About page</a>
+    <a href="Login.php" class="w3-bar-item w3-button">Login</a>
+  </div>
+
 <form>
 <select name="users" onchange="showUser(this.value)">
   <option value="">Select a Doctor:</option>
@@ -33,6 +41,15 @@ function showUser(str) {
 </form>
 <br>
 <div id="txtHint"><b>Person info will be listed here...</b></div>
+
+</body>
+</html>
+
+
+
+
+
+
 
 </body>
 </html>
