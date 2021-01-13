@@ -6,7 +6,7 @@
   $user = mysqli_real_escape_string($db, $_POST['user']);
   $pass = mysqli_real_escape_string($db, $_POST['pass']);
 
-  $sql = "SELECT * FROM login WHERE user = '$user';";
+  $sql = "SELECT name,user,pass FROM login WHERE user = '$user';";
 
 
   $res = mysqli_query($db,$sql);
@@ -17,7 +17,6 @@ if ($check > 0) {
 
   if($user === $get['user'] && $pass === $get['pass'])
   {
-
       $_SESSION['uname'] = $get['name'];
       header("location: Admin_insert.php");
   }
