@@ -14,7 +14,7 @@ function showUser(str) {
         document.getElementById("txtHint").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET","DoctorDetails.php?q="+str,true);
+    xmlhttp.open("GET","doctor/DoctorDetails.php?q="+str,true);
     xmlhttp.send();
   }
 }

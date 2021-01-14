@@ -23,6 +23,7 @@ $check = mysqli_num_rows($res);
     <link rel="stylesheet" href="admin_insert.css" type="text/css">
   </head>
   <body>
+    <center><h1>Care and Cure Hospital</h1></center>
 
     <?php
 
