@@ -83,10 +83,11 @@ label #cancel{
 #check:checked ~ section{
   margin-left: 250px;
 }
-section{
-  background: url(bg.jpeg) no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  transition: all .5s;
+
+.b1{
+  position: fixed;
+  height: 100%;
+  margin-left: 20%;
+  margin-right: 2%;
+  margin-top: 2%;
 }

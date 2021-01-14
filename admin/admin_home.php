@@ -41,25 +41,20 @@ $check = mysqli_num_rows($res);
       <li><a href="#"><i class="fas fa-calendar-week"></i>Events</a></li>
       <li><a href="#"><i class="far fa-question-circle"></i>About</a></li>
       <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
-      <li><a href="#"><i class="far fa-envelope"></i>Contact</a></li>
+          <!--View room information-->
+      <li><a href="../room_details.php"><i class="far fa-envelope"></i>View Room</a></li>
     </ul>
     </div>
-  <section></section>
+  <div class="b1">
+    <center><h1>Care and Cure Hospital</h1></center>
 
-  <center><h1>Care and Cure Hospital</h1></center>
-
-  <?php
-  while($row = mysqli_fetch_array($res)) {
-      echo  $row['name'] . "<br>";
-      echo "0" . $row['phone'] . "<br>";
-      echo $row['email'];
-  }
-  ?>
-
-  <!--View room information-->
-
-  <div1 class="button">
-     <a href="../room_details.php" class="login">View Room</a>
-  </div1>
+    <?php
+    while($row = mysqli_fetch_array($res)) {
+        echo  $row['name'] . "<br>";
+        echo "0" . $row['phone'] . "<br>";
+        echo $row['email'];
+    }
+    ?>
+  </div>
   </body>
 </html>
