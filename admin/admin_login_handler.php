@@ -1,5 +1,5 @@
 <?php
-  include_once 'db.php';
+  include_once '../db.php';
 
   session_start();
 
@@ -20,13 +20,13 @@ if ($check > 0) {
 
       $_SESSION['uname'] = $get['name'];
 
-      header("location: admin/admin_home.php");
+      header("location: admin_home.php");
   }
   else {
-    header("location: admin/Admin_login.php");
+    header("location: Admin_login.php");
   }
 }
 else {
-    header("location: admin/Admin_login.php");
+    header("location: Admin_login.php");
 }
  ?>

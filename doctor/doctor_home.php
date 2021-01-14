@@ -1,5 +1,5 @@
 <?php
-include_once 'db.php';
+include_once '../db.php';
 
 session_start();
 if(isset($_SESSION['d_id'])){
@@ -20,7 +20,7 @@ $check = mysqli_num_rows($res);
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Patient Details</title>
-        <link rel="stylesheet" href="admin_insert.css" type="text/css">
+        <link rel="stylesheet" href="../admin/admin_insert.css" type="text/css">
         <style>
           div {
             background-color: lightblue;

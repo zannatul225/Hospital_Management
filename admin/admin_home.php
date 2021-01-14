@@ -1,5 +1,5 @@
 <?php
-include_once 'db.php';
+include_once '../db.php';
 
 session_start();
 if(isset($_SESSION['uname'])){
@@ -37,7 +37,7 @@ $check = mysqli_num_rows($res);
       <!--View room information-->
 
       <div1 class="button">
-         <a href="room_details.php" class="login">View Room</a>
+         <a href="../room_details.php" class="login">View Room</a>
       </div1>
 
 
