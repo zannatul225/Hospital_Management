@@ -6,7 +6,7 @@ if(isset($_SESSION['p_id'])){
   $p_id= $_SESSION['p_id'];
 }
   else {
-    header("location: Employee_login.php");
+    header("location: Patient_login.php");
   }
 
 $sql = "SELECT * FROM patient where P_ID='$p_id';";

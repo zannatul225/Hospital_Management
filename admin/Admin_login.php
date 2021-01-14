@@ -28,7 +28,7 @@
 <!--===============================================================================================-->
 </head>
 <body>
-  <form action="admin_login_handler.php" method="post">
+  <form action="../admin/admin_login_handler.php" method="post">
 
 	<div class="limiter">
 		<div class="container-login100">

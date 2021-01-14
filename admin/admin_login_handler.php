@@ -20,13 +20,13 @@ if ($check > 0) {
 
       $_SESSION['uname'] = $get['name'];
 
-      header("location: admin_home.php");
+      header("location: admin/admin_home.php");
   }
   else {
-    header("location: Admin_login.php");
+    header("location: admin/Admin_login.php");
   }
 }
 else {
-    header("location: Admin_login.php");
+    header("location: admin/Admin_login.php");
 }
  ?>
