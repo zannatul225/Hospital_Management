@@ -38,7 +38,8 @@ if(isset($_SESSION['eid'])){
       cursor: pointer;
       padding: 14px 16px;
       transition: 0.3s;
-      font-size: 17px;
+      font-size: 25px;
+      margin-right: 7%;
     }
 
     /* Change background color of buttons on hover */
@@ -59,15 +60,12 @@ if(isset($_SESSION['eid'])){
       border-top: none;
     }
 
-    .tab .search-container {
-      float: right;
-    }
-
     .tab input[type=text] {
       padding: 6px;
       margin-top: 8px;
-      font-size: 17px;
+      font-size: 20px;
       border: none;
+      width: 40%;
     }
 
     .tab .search-container button {
@@ -76,7 +74,7 @@ if(isset($_SESSION['eid'])){
       margin-top: 8px;
       margin-right: 16px;
       background: #ddd;
-      font-size: 17px;
+      font-size: 20px;
       border: none;
       cursor: pointer;
     }
@@ -107,17 +105,17 @@ if(isset($_SESSION['eid'])){
     <body>
 
         <div class="tab">
-          <a href="employee_home.php"><button class="tablinks">Home</button></a>
-          <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-          <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-          <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            <a href="employee_home.php"><button class="tablinks">Home</button></a>
+            <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
 
-          <div class="search-container">
-            <form action="/action_page.php">
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-          </div>
+            <div class="search-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
         </div>
 
         <div id="London" class="tabcontent">
