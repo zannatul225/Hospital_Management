@@ -20,7 +20,7 @@ if ($check > 0) {
 
       $_SESSION['e_name'] = $get['E_Name'];
       $_SESSION['eid'] = $get['E_ID'];
-      header("location: Employee_Details.php");
+      header("location: employee_home.php");
   }
   else {
 

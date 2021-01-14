@@ -27,15 +27,7 @@ $check = mysqli_num_rows($res);
     </head>
     <body bgcolor='GREY'>
       <div style="margin-top: 4%; margin-left:0%; margin-right:0%; font-size: 40px;font-weight: bold">
-            <center>Welcome <?php
-        if(isset($_SESSION['e_name'])){
-          echo($_SESSION['e_name']);
-        }
-          else {
-            header("location: Employee_login.php");
-          }
-         ?>
-         !! <br>Your detail information.</center></div>
+
         <?php
           if ($check > 0) {
           while($row = mysqli_fetch_assoc($res)) {?>
