@@ -23,6 +23,7 @@ $check = mysqli_num_rows($res);
           div {
             background-color: lightblue;
           }
+
         </style>
     </head>
     <body bgcolor='GREY'>
