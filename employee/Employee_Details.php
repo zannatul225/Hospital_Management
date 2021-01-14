@@ -1,5 +1,5 @@
 <?php
-include_once 'db.php';
+include_once '../db.php';
 
 session_start();
 if(isset($_SESSION['eid'])){
@@ -37,15 +37,21 @@ $check = mysqli_num_rows($res);
          ?>
          !! <br>Your detail information.</center></div>
         <?php
-
+          if ($check > 0) {
           while($row = mysqli_fetch_assoc($res)) {?>
+            <div style="margin-top: 8%; margin-left:35%; margin-right:35%; font-size: 30px;font-weight: bold">
+
+            <?php
 
             echo "Employee ID: " . $row["E_ID"]. " <br>Name: " . $row["E_Name"]. "<br>Shift: "
               . $row["Shift"]. "<br>Designation: " . $row["Designation"]. "<br>Salary: " . $row["E_Salary"]. "<br>";
 
+          ?>
+          </div>
           <?php
         }
       }
            ?>
+
     </body>
 </html>
