@@ -33,7 +33,10 @@ $check = mysqli_num_rows($res);
         </style>
     </head>
     <body>
-                <center><h2> Room details of our hospital </h2></center>
+      <?php
+      include "nav.php"
+       ?>
+                <center><h2> Employee details of our hospital </h2></center>
                 <?php
                 echo "<table>
                     <tr>

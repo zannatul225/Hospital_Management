@@ -33,6 +33,9 @@ $check = mysqli_num_rows($res);
         </style>
     </head>
     <body>
+      <?php
+      include "nav.php"
+       ?>
                 <center><h2> Room details of our hospital </h2></center>
                 <?php
                 echo "<table>
