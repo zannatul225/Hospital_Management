@@ -6,6 +6,11 @@
         <link rel="stylesheet" href="home.css" type="text/css">
       </head>
       <body>
+        <div class="w3-bar w3-black" style="height:36px;">
+          <a href="index.php" class="w3-bar-item w3-button">Home</a>
+          <a href="about.php" class="w3-bar-item w3-button">About page</a>
+          <a href="Login.php" class="w3-bar-item w3-button">Login</a>
+        </div>
         <h1>Welcome to care and cure hospital.</h1>
         <h2>Login in order to continue.</h2>
         <center><div class="button">
