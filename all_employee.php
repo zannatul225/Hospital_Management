@@ -10,7 +10,7 @@ $check = mysqli_num_rows($res);
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>DoctorDetails</title>
+        <title>All Employee Details</title>
         <style>
         div {
           background-color: lightblue;
@@ -47,13 +47,13 @@ $check = mysqli_num_rows($res);
                     </tr>";
                 while($row = mysqli_fetch_array($res)) {
                   echo "<tr>";
-                    echo "<td>" . $row['E_ID '] . "</td>";
-                    echo "<td>" . $row['E_Name '] . "</td>";
-                    echo "<td>" . $row['Shift '] . "</td>";
-                    echo "<td>" . $row['Designation '] . "</td>";
-                    echo "<td>" . $row['address  '] . "</td>";
-                    echo "<td>" . $row['phone  '] . "</td>";
-                    echo "<td>" . $row['salary  '] . "</td>";
+                    echo "<td>" . $row['E_ID'] . "</td>";
+                    echo "<td>" . $row['E_Name'] . "</td>";
+                    echo "<td>" . $row['Shift'] . "</td>";
+                    echo "<td>" . $row['Designation'] . "</td>";
+                    echo "<td>" . $row['address'] . "</td>";
+                    echo "<td>" . $row['phone'] . "</td>";
+                    echo "<td>" . $row['salary'] . "</td>";
                   echo "</tr>";
                 }
                 echo "</table>";
