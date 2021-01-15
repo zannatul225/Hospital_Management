@@ -9,58 +9,11 @@ if(isset($_SESSION['d_id'])){
     header("location: Doctor_login.php");
   }
 
-$sql = "SELECT * FROM doctor where D_ID='$d_id';";
+    $sql = "SELECT * FROM doctor where D_ID='$d_id';";
 
-$res = mysqli_query($db,$sql);
-$check = mysqli_num_rows($res);
-
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Doctor Home</title>
-    </head>
-    <body bgcolor='GREY'>
-
-      <div style="margin-top: 2%; margin-left:0%; margin-right:0%; font-size: 30px;font-weight: bold">
-            <center>Welcome <?php
-        if(isset($_SESSION['d_name'])){
-          echo($_SESSION['d_name']);
-        }
-          else {
-            header("location: Doctor_login.php");
-          }
-         ?>
-         !! <br>Your details of your information.</center></div>
-        <?php
-        if ($check > 0) {
-          while($row = mysqli_fetch_assoc($res)) {?>
-            <div style="margin-top: 2%; margin-left:35%; margin-right:35%; font-size: 20px;font-weight: bold">
-
-            <?php
-            echo "Doctor ID: " . $row["D_ID"]. " <br>Name: " . $row["D_Name"]. "<br>Qualification: "
-              . $row["Qualification"]. "<br>Phone no: " . $row["D_Phone_no"]. "<br>Address: "
-              . $row["D_Address"]. "<br>";
-            ?>
-          </div>
-          <?php
-        }
-      }
-           ?>
-           <div class="button" style="margin-top:2%; font-size: 20px;font-weight: bold; text-align:center">
-             <form action="doctor_search.php" method="post">
-              To search for Patient enter patient ID:
-             <input type="text" name="p_id" ><input type="submit" value="Search"></form>
-           </div>
-           <center><div class="button" style="margin-top:0%; font-size: 20px;font-weight: bold">
-             To insert patient update:
-             <a href="Doctor_Insert.php" class="login">Insert</a>
-           </div>
-         </center>
-    </body>
-</html>
-
+    $res = mysqli_query($db,$sql);
+    $check = mysqli_num_rows($res);
+    ?>
 
 
 <!DOCTYPE html>
@@ -114,7 +67,7 @@ $check = mysqli_num_rows($res);
      margin-top: 8px;
      font-size: 20px;
      border: none;
-     width: 20%;
+     width: 40%;
    }
 
    .tab .search-container button {
@@ -154,15 +107,14 @@ $check = mysqli_num_rows($res);
    <body>
 
        <div class="tab">
-           <a href="employee_home.php"><button class="tablinks">Home</button></a>
-           <button class="tablinks" onclick="openCity(event, 'Shift')">Shift</button>
-           <button class="tablinks" onclick="openCity(event, 'E_Salary')">Salary</button>
-           <button class="tablinks" onclick="openCity(event, 'Protocols')">Protocols</button>
+           <a href="doctor_home.php"><button class="tablinks">Home</button></a>
+           <a href="Doctor_Insert.php"><button class="tablinks" onclick="openCity(event, 'Update_Report')">Update Report</button></a>
            <a href="../logout.php"><button class="tablinks">Logout</button></a>
 
+
            <div class="search-container">
-             <form action="/action_page.php">
-               <input type="text" placeholder="Search.." name="search">
+             <form action="doctor_search.php" method="post">
+               <input type="text" placeholder="Search Patient with Patient ID" name="p_id">
                <button type="submit"><i class="fa fa-search"></i></button>
              </form>
            </div>
@@ -171,11 +123,14 @@ $check = mysqli_num_rows($res);
        <h1>
        <?php
              while($row = mysqli_fetch_array($res)){
-             echo $row['E_Name'];
-             echo "<br>" .$row['phone'];
-             echo "<br>" .$row['address'];
-             echo "<br>" .$row['Designation'];
+             echo "Doctor ID: " . $row['D_ID'];
+             echo "<br>" .$row['D_Name'];
+             echo "<br>" .$row['Qualification'];
+             echo "<br>" .$row['category'];
+             echo "<br>" .$row['D_Phone_no'];
+             echo "<br>" .$row['D_Address'];
         ?></h1>
+
 
        <div id="Shift" class="tabcontent">
          <h3>Your shift details:</h3>
@@ -205,6 +160,10 @@ $check = mysqli_num_rows($res);
          4)	Entry time and exit time is strictly maintained. If any employee is late or leaves early he or she will be given penalty.<br>
 
        </div>
+
+       <div style="margin-top: 2%; margin-left:0%; margin-right:0%; font-size: 30px;font-weight: bold">
+
+          </div>
 
        <script>
        function openCity(evt, cityName) {

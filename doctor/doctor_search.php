@@ -1,5 +1,5 @@
 <?php
-include_once 'db.php';
+include_once '../db.php';
 
 $p_id = mysqli_real_escape_string($db, $_POST['p_id']);
 
