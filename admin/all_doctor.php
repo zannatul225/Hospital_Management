@@ -16,6 +16,7 @@ $check = mysqli_num_rows($res);
           background-color: lightblue;
         }
         table {
+          margin-top: 50px;
           margin-left: 300px;
           font-family: arial, sans-serif;
           border-collapse: collapse;
@@ -31,6 +32,7 @@ $check = mysqli_num_rows($res);
         tr:nth-child(even) {
           background-color: #dddddd;
         }
+        
         </style>
     </head>
     <body>
