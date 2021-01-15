@@ -1,6 +1,6 @@
 <?php
-include_once 'db.php';
-$sql = "SELECT * FROM employee;";
+include_once '../db.php';
+$sql = "SELECT * FROM wards_and_rooms;";
 
 $res = mysqli_query($db,$sql);
 $check = mysqli_num_rows($res);
@@ -10,7 +10,7 @@ $check = mysqli_num_rows($res);
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>All Employee Details</title>
+        <title>DoctorDetails</title>
         <style>
         div {
           background-color: lightblue;
@@ -37,23 +37,18 @@ $check = mysqli_num_rows($res);
                 <?php
                 echo "<table>
                     <tr>
-                        <th>Employee ID</th>
-                        <th>Name</th>
-                        <th>Shift</th>
-                        <th>Designation</th>
-                        <th>address</th>
-                        <th>phone</th>
-                        <th>salary</th>
+                        <th>Room no</th>
+                        <th>Ward</th>
+                        <th>Floor</th>
+                        <th>Room</th>
                     </tr>";
                 while($row = mysqli_fetch_array($res)) {
                   echo "<tr>";
-                    echo "<td>" . $row['E_ID'] . "</td>";
-                    echo "<td>" . $row['E_Name'] . "</td>";
-                    echo "<td>" . $row['Shift'] . "</td>";
-                    echo "<td>" . $row['Designation'] . "</td>";
-                    echo "<td>" . $row['address'] . "</td>";
-                    echo "<td>" . $row['phone'] . "</td>";
-                    echo "<td>" . $row['salary'] . "</td>";
+                    echo "<td>" . $row['Room_No'] . "</td>";
+                    echo "<td>" . $row['Ward'] . "</td>";
+                    echo "<td>" . $row['Floor'] . "</td>";
+                    echo "<td>" . $row['Room'] . "</td>";
+
                   echo "</tr>";
                 }
                 echo "</table>";

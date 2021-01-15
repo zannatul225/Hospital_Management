@@ -1,5 +1,5 @@
 <?php
-include_once 'db.php';
+include_once '../db.php';
 $sql = "SELECT * FROM patient;";
 
 $res = mysqli_query($db,$sql);
