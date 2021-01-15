@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Home</title>
         <link rel="stylesheet" href="home.css" type="text/css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       </head>
       <body>
         <div class="w3-bar w3-black" style="height:36px;">

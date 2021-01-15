@@ -35,14 +35,12 @@ $check = mysqli_num_rows($res);
     <div class="sidebar">
     <header>Admin Panel</header>
     <ul>
+      <li><a href="admin_home.php"><i class="fas fa-stream"></i>Home Page</a></li>
       <li><a href="admin_view.php"><i class="fas fa-stream"></i>Dashboard</a></li>
-      <li><a href="update_patient_info.php"><i class="fas fa-stream"></i>Update Patient</a></li>
+      <li><a href="update_patient_info.php"><i class="fas fa-stream"></i>Insert New Patient</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Update Doctor</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Update Employee</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Add Patient</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Delete Patient</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Add Employee</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Delete Employee</a></li>
 
     </ul>
     </div>

@@ -20,9 +20,67 @@
       	left: 0px;
       	overflow: hidden;
       }
-      .f{
-        
-      }
+
+        .form .f{
+    	font-size: 20px;
+    	margin: 50px;
+
+    }
+
+     .f h2, .f input{
+    	text-transform: capitalize;
+    	display: block;
+    	color: grey;
+
+    }
+
+    .f input{
+    	width: 100%;
+    	height: 40px;
+    	margin-top: 20px;
+    	margin-bottom: 20px;
+    	border-radius: 20px;
+    	padding: 0px 10px;
+    }
+
+    .f textarea{
+    	width: 100%;
+    	height: 200px;
+    	margin-top: 10px;
+    	margin-bottom: 20px;
+    	border-radius: 20px;
+    	padding: 10px 11px;
+    	font-size: 15px;
+    	color: #808080;
+    }
+
+    .f input[type=submit]{
+    	background-color: #23B2DA;
+    	color: white;
+    	font-size: 20px;
+    	border-radius: 20px;
+
+    }
+        .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+
+
+
+    .button2:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
 
     </style>
 
@@ -54,14 +112,12 @@
     <div class="sidebar">
     <header>Admin Panel</header>
     <ul>
+      <li><a href="admin_home.php"><i class="fas fa-stream"></i>Home Page</a></li>
       <li><a href="admin_view.php"><i class="fas fa-stream"></i>Dashboard</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Update Patient</a></li>
+      <li><a href="update_patient_info.php"><i class="fas fa-stream"></i>Insert New Patient</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Update Doctor</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Update Employee</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Add Patient</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Delete Patient</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Add Employee</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Delete Employee</a></li>
 
     </ul>
     </div>
@@ -91,7 +147,7 @@
         <input type="text" placeholder="Doctor ID" name="d_id" >
         <input type="text" placeholder="Room No" name="room" >
         <input type="text" placeholder="pass:" name="pass" >
-        <button type="submit" name="submit">Enroll</button>
+        <button class="button button2" type="submit" name="submit">Enroll</button>
 			</div>
 		</div>
 
