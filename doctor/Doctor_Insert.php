@@ -130,6 +130,7 @@
         <!--Update patient information-->
     <h1>Update patient Information</h1>
 
+    <div style="margin-top: 4%; margin-left:25%; margin-right:10%; font-size: 40px;font-weight: bold; padding:15px; background: #D5DBDB">
     <input type="text" name="p_id" placeholder="Patient ID:">
     <input type="text" name="t_r" placeholder="Test Report:">
     <button type="submit" name="submit">Update</button></h3>

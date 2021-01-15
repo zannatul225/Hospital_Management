@@ -36,7 +36,7 @@ $check = mysqli_num_rows($res);
     <header>Admin Panel</header>
     <ul>
       <li><a href="admin_view.php"><i class="fas fa-stream"></i>Dashboard</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Update Patient</a></li>
+      <li><a href="update_patient_info.php"><i class="fas fa-stream"></i>Update Patient</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Update Doctor</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Update Employee</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Add Patient</a></li>
