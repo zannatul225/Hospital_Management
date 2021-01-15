@@ -160,23 +160,23 @@
           New Register:
         </div>
 
-        <form action="newregistered.php" method="post">
+        <form action="action.php" method="post">
           <div class="form_wrap">
               <div class="input_wrap">
                 <label id="std_id">Patient Name</label>
-                <input type="text" name="std_id" id="std_id" placeholder="Enter Patient Name">
+                <input type="text" name="p_name" id="p_name" placeholder="Enter Patient Name">
               </div>
               <div class="input_wrap">
                 <label id="msg">Phone No</label>
-                <input type="text" name="msg" id="msg" placeholder="Enter Your Phone No">
+                <input type="text" name="phn" id="phn" placeholder="Enter Your Phone No">
               </div>
               <div class="input_wrap">
                 <label id="std_id">Adress</label>
-                <input type="text" name="std_id" id="std_id" placeholder="Enter Address">
+                <input type="text" name="add" id="add" placeholder="Enter Address">
               </div>
               <div class="input_wrap">
                 <label id="msg">Disease</label>
-                <input type="text" name="msg" id="msg" placeholder="Enter your disease">
+                <input type="text" name="disease" id="disease" placeholder="Enter your disease">
               </div>
 
             <div class="input_wrap">

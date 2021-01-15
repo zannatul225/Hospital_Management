@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <title>About Page</title>
         <style media="screen">
           html,body{
@@ -13,7 +14,7 @@
             }
           .background{
 
-            background-image: url(image2.jpg);
+            background-image: url(images/about.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -30,6 +31,12 @@
 
     </head>
     <body bgcolor=LIGHTBLUE>
+      <div class="w3-bar w3-black">
+        <a href="index.php" class="w3-bar-item w3-button">Home</a>
+        <a href="about.php" class="w3-bar-item w3-button">About page</a>
+        <a href="Login.php" class="w3-bar-item w3-button">Login</a>
+      </div>
+
       <marquee width="100%" direction="left" height="70px">
         <h1 style="color: #728FCE">
         * * * * * * * * * * * * * *  For emergency dial 01728326786,826572929 * * * * * * * * * * * * * *
