@@ -15,6 +15,7 @@
        ?>
     </div>
     <div class="b1">
+      <h1>Welcome to admin Dashboard.</h1>
     </div>
   </body>
 </html>

@@ -87,7 +87,8 @@ label #cancel{
 .b1{
   position: fixed;
   height: 100%;
-  margin-left: 20%;
+  margin-left: 40%;
   margin-right: 2%;
-  margin-top: 2%;
+  margin-top: 5%;
+  font-size: 22px;
 }

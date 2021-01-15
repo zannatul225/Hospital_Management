@@ -46,16 +46,16 @@ $check = mysqli_num_rows($res);
 
     </ul>
     </div>
+    <div class="b1">
+      <center><h1>Care and Cure Hospital</h1></center>
 
-    <center><h1>Care and Cure Hospital</h1></center>
-
-    <?php
-    while($row = mysqli_fetch_array($res)) {
-        echo  $row['name'] . "<br>";
-        echo "0" . $row['phone'] . "<br>";
-        echo $row['email'];
-    }
-    ?>
-  
+      <?php
+      while($row = mysqli_fetch_array($res)) {
+          echo  $row['name'] . "<br>";
+          echo "0" . $row['phone'] . "<br>";
+          echo $row['email'];
+      }
+      ?>
+    </div>
   </body>
 </html>
