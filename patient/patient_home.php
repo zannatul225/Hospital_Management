@@ -8,10 +8,9 @@ if(isset($_SESSION['p_id'])){
       else {
         header("location: Employee_login.php");
       }
-
-    $sql = "SELECT * FROM patient where P_ID='$p_id';";
+//patient table query
+    $sql = "SELECT * FROM patient NATURAL JOIN disease_and_diagnosis NATURAL JOIN bills_and_payment where P_ID='$p_id';";
     $res = mysqli_query($db,$sql);
-    $check = mysqli_num_rows($res);
  ?>
 
  <!DOCTYPE html>
@@ -108,10 +107,10 @@ if(isset($_SESSION['p_id'])){
     <body>
 
         <div class="tab">
-            <a href="employee_home.php"><button class="tablinks">Home</button></a>
-            <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            <a href="patient_home.php"><button class="tablinks">Home</button></a>
+            <button class="tablinks" onclick="openCity(event, 'Test_Report')">Test_Report</button>
+            <button class="tablinks" onclick="openCity(event, 'Billing_Status')">Billing Status</button>
+            <a href="../logout.php"><button class="tablinks">Logout</button></a>
 
             <div class="search-container">
               <form action="/action_page.php">
@@ -121,27 +120,41 @@ if(isset($_SESSION['p_id'])){
             </div>
         </div>
 
-        <div id="London" class="tabcontent">
-          <h3>London</h3>
-          <p>London is the capital city of England.</p>
-        </div>
-
-        <div id="Paris" class="tabcontent">
-          <h3>Paris</h3>
-          <p>Paris is the capital of France.</p>
-        </div>
-
-        <div id="Tokyo" class="tabcontent">
-          <h3>Tokyo</h3>
-          <p>Tokyo is the capital of Japan.</p>
-        </div>
         <h1>
         <?php
             while($row = mysqli_fetch_array($res)){
               echo $row['P_Name'];
-            }
+              echo "<br>Patient ID: " . $row['P_ID'];
+              echo "<br>Address: " . $row['P_Address'];
+              echo "<br>Phone no: " . $row['P_Phone_no'];
+              echo "<br>Doctor ID: " . $row['D_ID'];
+              echo "<br>Disease: " . $row["Disease"];
+
          ?></h1>
 
+        <div id="Test_Report" class="tabcontent">
+          <h3>Your Test Report:</h3>
+
+          <p>
+            <?php
+            echo "Disease: " . $row["Disease"] . "<br>";
+            echo "Result: " . $row["Test_Report"];
+           ?>
+          </p>
+        </div>
+
+        <div id="Billing_Status" class="tabcontent">
+          <h3>Billing Status</h3>
+          <p>
+            <?php
+            echo "Disease: " . $row["Disease"] . "<br>";
+            echo "Receipt No : " . $row["Receipt_No"] . "<br>";
+            echo "Total Bill : " . $row["Bill"] . "<br>";
+            echo "Payment Status: " . $row["Payment_Status"] . "<br>";
+            }
+             ?>
+          </p>
+        </div>
 
         <script>
         function openCity(evt, cityName) {

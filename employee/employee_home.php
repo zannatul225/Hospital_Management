@@ -9,7 +9,7 @@ if(isset($_SESSION['eid'])){
         header("location: Employee_login.php");
       }
 
-    $sql = "SELECT E_ID,E_Name,Shift,Designation,E_Salary  FROM employee NATURAL JOIN financial_update where E_ID='$e_id';";
+    $sql = "SELECT E_ID,E_Name,Shift,Designation,address, phone, E_Salary  FROM employee NATURAL JOIN financial_update where E_ID='$e_id';";
     $res = mysqli_query($db,$sql);
     $check = mysqli_num_rows($res);
  ?>
@@ -65,7 +65,7 @@ if(isset($_SESSION['eid'])){
       margin-top: 8px;
       font-size: 20px;
       border: none;
-      width: 40%;
+      width: 20%;
     }
 
     .tab .search-container button {
@@ -106,9 +106,10 @@ if(isset($_SESSION['eid'])){
 
         <div class="tab">
             <a href="employee_home.php"><button class="tablinks">Home</button></a>
-            <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            <button class="tablinks" onclick="openCity(event, 'Shift')">Shift</button>
+            <button class="tablinks" onclick="openCity(event, 'E_Salary')">Salary</button>
+            <button class="tablinks" onclick="openCity(event, 'Protocols')">Protocols</button>
+            <a href="../logout.php"><button class="tablinks">Logout</button></a>
 
             <div class="search-container">
               <form action="/action_page.php">
@@ -118,27 +119,43 @@ if(isset($_SESSION['eid'])){
             </div>
         </div>
 
-        <div id="London" class="tabcontent">
-          <h3>London</h3>
-          <p>London is the capital city of England.</p>
-        </div>
-
-        <div id="Paris" class="tabcontent">
-          <h3>Paris</h3>
-          <p>Paris is the capital of France.</p>
-        </div>
-
-        <div id="Tokyo" class="tabcontent">
-          <h3>Tokyo</h3>
-          <p>Tokyo is the capital of Japan.</p>
-        </div>
         <h1>
         <?php
-            while($row = mysqli_fetch_array($res)){
+              while($row = mysqli_fetch_array($res)){
               echo $row['E_Name'];
-            }
+              echo "<br>" .$row['phone'];
+              echo "<br>" .$row['address'];
+              echo "<br>" .$row['Designation'];
          ?></h1>
 
+        <div id="Shift" class="tabcontent">
+          <h3>Your shift details:</h3>
+          <p>
+            <?php
+              echo $row['Shift'];
+             ?>
+          </p>
+        </div>
+
+        <div id="E_Salary" class="tabcontent">
+          <h3>Your salary details</h3>
+          <p>
+            <?php
+              echo $row['E_Salary'] . "BDT";
+            }
+             ?>
+
+          </p>
+        </div>
+
+        <div id="Protocols" class="tabcontent">
+          <h3>Protocols</h3>
+          1)	Be honest and respect your work.<br>
+          2)	We care our patients as our family member so be kind  to them.<br>
+          3)	Every member should perform their responsibilities properly.<br>
+          4)	Entry time and exit time is strictly maintained. If any employee is late or leaves early he or she will be given penalty.<br>
+
+        </div>
 
         <script>
         function openCity(evt, cityName) {
