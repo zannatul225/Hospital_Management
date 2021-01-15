@@ -41,7 +41,7 @@
 
     <button type="submit" name="submit">Update</button></h3>
     <?php
-    include_once 'db.php';
+    include_once '../db.php';
     if (isset($_POST['submit'])) {
 
                   //Update patient information

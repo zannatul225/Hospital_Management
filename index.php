@@ -6,6 +6,9 @@
     </head>
 
     <body>
+      <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+      <p id="demo"></p>
 
         <div class="background">
             <center><b><h1 style="color: darkslateblue; font-family: fantasy; font-size: 500%; font-style: inherit; ">Welcome to Care and Cure Hospital</h1></b><br></center>

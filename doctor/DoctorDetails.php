@@ -42,7 +42,7 @@
             {
               $req='Pediatrician';
             }
-          include 'db.php';
+          include '../db.php';
           $sql= "SELECT * FROM doctor WHERE category = '".$req."'";
           $result = mysqli_query($db,$sql);
           $check = mysqli_num_rows($result);
