@@ -13,13 +13,11 @@ $check = mysqli_num_rows($res);
 
         <title>DoctorDetails</title>
         <style>
-        div {
-          background-color: lightblue;
-        }
         table {
+          margin-left: 300px;
           font-family: arial, sans-serif;
           border-collapse: collapse;
-          width: 100%;
+          width: 80%;
         }
 
         td, th {
@@ -31,17 +29,14 @@ $check = mysqli_num_rows($res);
         tr:nth-child(even) {
           background-color: #dddddd;
         }
+
         </style>
     </head>
     <body>
-      <div class="main">
-      <div>
         <?php
         include "nav.php"
          ?>
-      </div>
 
-       <div class="b1">
                 <center><h2> Room details of our hospital </h2></center>
                 <?php
                 echo "<table>
@@ -64,7 +59,5 @@ $check = mysqli_num_rows($res);
 
                 ?>
               <br>
-              </div>
-          </div>
     </body>
 </html>

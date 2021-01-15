@@ -10,16 +10,16 @@ $check = mysqli_num_rows($res);
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="admin.css">
         <title>Patient Details</title>
         <style>
         div {
           background-color: lightblue;
         }
         table {
+          margin-left: 300px;
           font-family: arial, sans-serif;
           border-collapse: collapse;
-          width: 100%;
+          width: 80%;
         }
 
         td, th {
