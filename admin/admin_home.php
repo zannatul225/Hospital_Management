@@ -33,7 +33,7 @@ $check = mysqli_num_rows($res);
       <i class="fas fa-times" id="cancel"></i>
     </label>
     <div class="sidebar">
-    <header>My App</header>
+    <header>Admin Panel</header>
     <ul>
       <li><a href="admin_view.php"><i class="fas fa-stream"></i>Dashboard</a></li>
       <li><a href="#"><i class="fas fa-stream"></i>Update Patient</a></li>
@@ -46,7 +46,7 @@ $check = mysqli_num_rows($res);
 
     </ul>
     </div>
-  <div class="b1">
+
     <center><h1>Care and Cure Hospital</h1></center>
 
     <?php
@@ -56,6 +56,6 @@ $check = mysqli_num_rows($res);
         echo $row['email'];
     }
     ?>
-  </div>
+  
   </body>
 </html>

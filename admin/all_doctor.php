@@ -16,7 +16,7 @@ $check = mysqli_num_rows($res);
           background-color: lightblue;
         }
         table {
-          margin-top: 50px;
+          margin-top: 20px;
           margin-left: 300px;
           font-family: arial, sans-serif;
           border-collapse: collapse;
@@ -32,14 +32,16 @@ $check = mysqli_num_rows($res);
         tr:nth-child(even) {
           background-color: #dddddd;
         }
-        
+        *{
+          font-family: tahoma;
+        }
         </style>
     </head>
     <body>
       <?php
       include "nav.php"
        ?>
-                <center><h2> Doctor details of our hospital </h2></center>
+                <center><h2 style="padding-top:10px;"> Doctor details of our hospital </h2></center>
                 <?php
                 echo "<table>
                     <tr>

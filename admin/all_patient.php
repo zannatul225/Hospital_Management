@@ -16,6 +16,7 @@ $check = mysqli_num_rows($res);
           background-color: lightblue;
         }
         table {
+          margin-top: 20px;
           margin-left: 300px;
           font-family: arial, sans-serif;
           border-collapse: collapse;
@@ -37,7 +38,7 @@ $check = mysqli_num_rows($res);
       <?php
       include "nav.php"
        ?>
-                <center><h1> Patient details of our hospital </h></center>
+                <center><h1 style="padding-top:10px;"> Patient details of our hospital </h></center>
                 <?php
                 echo "<table>
                     <tr>
