@@ -20,36 +20,26 @@ function showUser(str) {
 }
 </script>
 </head>
-<body>
+    <body>
 
-  <div class="w3-bar w3-black">
-    <a href="index.php" class="w3-bar-item w3-button">Home</a>
-    <a href="about.php" class="w3-bar-item w3-button">About page</a>
-    <a href="Login.php" class="w3-bar-item w3-button">Login</a>
-  </div>
+          <div class="w3-bar w3-black">
+            <a href="index.php" class="w3-bar-item w3-button">Home</a>
+            <a href="about.php" class="w3-bar-item w3-button">About page</a>
+            <a href="Login.php" class="w3-bar-item w3-button">Login</a>
+          </div>
 
-<form>
-<select name="users" onchange="showUser(this.value)">
-  <option value="">Select a Doctor:</option>
-  <option value="1">Neurologist</option>
-  <option value="2">Nephrologist</option>
-  <option value="3">Cardiologist</option>
-  <option value="4">Orthopedist</option>
-  <option value="5">Gynecologist</option>
-  <option value="6">Pediatrician</option>
-  </select>
-</form>
-<br>
-<div id="txtHint"><b>Person info will be listed here...</b></div>
-
-</body>
-</html>
-
-
-
-
-
-
-
-</body>
+          <form>
+          <select name="users" onchange="showUser(this.value)">
+            <option value="">Select a Doctor:</option>
+            <option value="1">Neurologist</option>
+            <option value="2">Nephrologist</option>
+            <option value="3">Cardiologist</option>
+            <option value="4">Orthopedist</option>
+            <option value="5">Gynecologist</option>
+            <option value="6">Pediatrician</option>
+            </select>
+          </form>
+          <br>
+        <div id="txtHint"><b>Person info will be listed here...</b></div>
+    </body>
 </html>
