@@ -10,6 +10,7 @@ $check = mysqli_num_rows($res);
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
         <title>DoctorDetails</title>
         <style>
         div {
@@ -33,9 +34,14 @@ $check = mysqli_num_rows($res);
         </style>
     </head>
     <body>
-      <?php
-      include "nav.php"
-       ?>
+      <div class="main">
+      <div>
+        <?php
+        include "nav.php"
+         ?>
+      </div>
+
+       <div class="b1">
                 <center><h2> Room details of our hospital </h2></center>
                 <?php
                 echo "<table>
@@ -58,5 +64,7 @@ $check = mysqli_num_rows($res);
 
                 ?>
               <br>
+              </div>
+          </div>
     </body>
 </html>
