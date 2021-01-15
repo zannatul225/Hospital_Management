@@ -1,11 +1,11 @@
 <html>
     <head>
         <title>Care and Cure Hospital</title>
-        <link rel = "stylesheet" type = "text/css" href = "css/WelcomePage.css" />
-        <link rel = "stylesheet" type = "text/css" href = "css/all.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "WelcomePage.css" />
+        <link rel = "stylesheet" type = "text/css" href = "all.css"/>
     </head>
 
-    <body>
+    <body style="background-image: url('images/bg.jpg');">
       <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
 
       <p id="demo"></p>

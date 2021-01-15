@@ -10,8 +10,6 @@ html,body{
     font-family: sans-serif;
 }
 .background{
-
-    background-image: url(../background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -49,7 +47,8 @@ html,body{
 
 .contact
 {
-	background-color: transparent;
+	background-color: #BCC6CC;
+  padding: 2px;
 	height: 180px;
 	width: 382px;
 	float: right;
