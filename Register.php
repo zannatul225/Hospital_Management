@@ -3,23 +3,41 @@
         <script type="text/javascript">
         function validate() {
           if( document.myForm.std_id.value == "" ) {
-                alert( "Please provide student Id!" );
-                document.getElementById("std_id").style.color = "yellow";
+                alert( "Please provide valid Information!" );
+                document.getElementById("p_name").style.color = "yellow";
                 document.myForm.std_id.focus() ;
                return false;
                 }
           if (document.myForm.std_id.value !== "") {
-                document.getElementById("std_id").style.color = "gray";
+                document.getElementById("p_name").style.color = "gray";
             }
           if( document.myForm.msg.value == "" ) {
-                alert( "Please write a message!" );
-                document.getElementById("msg").style.color = "yellow";
+                alert( "Please provide valid Information!" );
+                document.getElementById("phn").style.color = "yellow";
                 document.myForm.msg.focus() ;
                return false;
             }
           if (document.myForm.msg.value !== "") {
-                document.getElementById("msg").style.color = "gray";
+                document.getElementById("phn").style.color = "gray";
             }
+            if( document.myForm.std_id.value == "" ) {
+                  alert( "Please provide valid Information!" );
+                  document.getElementById("add").style.color = "yellow";
+                  document.myForm.std_id.focus() ;
+                 return false;
+                  }
+            if (document.myForm.std_id.value !== "") {
+                  document.getElementById("add").style.color = "gray";
+              }
+            if( document.myForm.msg.value == "" ) {
+                  alert( "Please provide valid Information!" );
+                  document.getElementById("disease").style.color = "yellow";
+                  document.myForm.msg.focus() ;
+                 return false;
+              }
+            if (document.myForm.msg.value !== "") {
+                  document.getElementById("disease").style.color = "gray";
+              }
 
          return(true);
       }
@@ -124,7 +142,6 @@
             }
 
 
-
             .form_wrap .submit_btn{
               width: 100%;
               background: #33ff55;
@@ -143,7 +160,7 @@
             }
             .bck{
               height: 100vh;
-              background-image: url("../../img/forget.jpg");
+              background-image: url("images/bg.jpg");
               background-size: cover;
               background-repeat: repeat;
             }
@@ -160,7 +177,7 @@
           New Register:
         </div>
 
-        <form action="action.php" method="post">
+        <form name = "myForm" action="action.php" method="post" onsubmit = "return(validate());">
           <div class="form_wrap">
               <div class="input_wrap">
                 <label id="std_id">Patient Name</label>
