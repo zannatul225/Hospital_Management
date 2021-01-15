@@ -3,12 +3,12 @@
     <style>
         table {
           width: 100%;
-          border-collapse: collapse;
         }
 
         table, td, th {
           border: 1px solid black;
           padding: 5px;
+          text-align: left;
         }
 
         th {text-align: left;}
@@ -46,12 +46,15 @@
           $sql= "SELECT * FROM doctor WHERE category = '".$req."'";
           $result = mysqli_query($db,$sql);
           $check = mysqli_num_rows($result);
-          echo "Found ";
+          ?>
+          <div style="background-color: lightblue;" >
+            <?php
+          echo "<h3>Found ";
           echo($check);
           echo " results!<br>";
-          echo "Showing results for ";
+          echo "<h3>Showing results for ";
           echo($req);
-          echo ":";
+          echo ":</h3>";
           echo "<table>
               <tr>
                   <th>Doctor's Name</th>
@@ -71,5 +74,6 @@
           echo "</table>";
 
       ?>
+      </div>
   </body>
 </html>

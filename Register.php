@@ -161,7 +161,7 @@
         <div class="wrapper1">
       <div class="registration_form">
         <div class="title">
-          Submit a Complaint :
+          Register :
         </div>
 
         <form name = "myForm" action="action.php" method="post" onsubmit = "return(validate());">
@@ -184,7 +184,7 @@
               </div>
 
             <div class="input_wrap">
-              <input type="submit" value="Send Message" class="submit_btn">
+              <input type="submit" value="Submit" class="submit_btn">
             </div>
           </div>
         </form>

@@ -20,7 +20,7 @@ function showUser(str) {
 }
 </script>
 </head>
-    <body>
+    <body style="background-image: url('images/bg1.jpg');">
 
           <div class="w3-bar w3-black">
             <a href="index.php" class="w3-bar-item w3-button">Home</a>
