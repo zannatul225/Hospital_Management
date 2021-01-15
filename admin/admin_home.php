@@ -35,14 +35,14 @@ $check = mysqli_num_rows($res);
     <div class="sidebar">
     <header>My App</header>
     <ul>
-      <li><a href="#"><i class="fas fa-qrcode"></i>Dashboard</a></li>
-      <li><a href="#"><i class="fas fa-link"></i>Shortcuts</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Overview</a></li>
-      <li><a href="#"><i class="fas fa-calendar-week"></i>Events</a></li>
-      <li><a href="#"><i class="far fa-question-circle"></i>About</a></li>
-      <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
-          <!--View room information-->
-      <li><a href="../room_details.php"><i class="far fa-envelope"></i>View Room</a></li>
+      <li><a href="all_doctor.php"><i class="fas fa-calendar-week"></i>View Doctors</a></li>
+      <li><a href="all_patient.php"><i class="far fa-question-circle"></i>View Patient</a></li>
+      <li><a href="all_employee.php"><i class="fas fa-sliders-h"></i>View Employee</a></li>
+      <li><a href="room_details.php"><i class="far fa-envelope"></i>View Room</a></li>
+      <li><a href="#"><i class="fas fa-qrcode"></i>Update Patient</a></li>
+      <li><a href="#"><i class="fas fa-link"></i>Update Doctor</a></li>
+      <li><a href="#"><i class="fas fa-stream"></i>Update Employee</a></li>
+
     </ul>
     </div>
   <div class="b1">
