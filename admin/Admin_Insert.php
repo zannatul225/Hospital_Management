@@ -105,5 +105,16 @@
         </form>
 
 
+        <?php
+        //Update emplyee information
+        $e_id = mysqli_real_escape_string($db, $_POST['e_id']);
+        $shift = mysqli_real_escape_string($db, $_POST['shift']);
+        $desig = mysqli_real_escape_string($db, $_POST['desig']);
+
+        $sql = "UPDATE employee SET Shift = '$shift', Designation = '$desig' WHERE E_ID = '$e_id';";
+        mysqli_query($db, $sql);
+
+         ?>
+
     </body>
 </html>
