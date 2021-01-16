@@ -98,9 +98,9 @@
       <li><a href="admin_home.php"><i class="fas fa-stream"></i>Home Page</a></li>
       <li><a href="admin_view.php"><i class="fas fa-stream"></i>Dashboard</a></li>
       <li><a href="update_patient_info.php"><i class="fas fa-stream"></i>Insert New Patient</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Update Doctor</a></li>
+      <li><a href="update_doctor_info.php"><i class="fas fa-stream"></i>Update Doctor</a></li>
       <li><a href="update_employee_info.php"><i class="fas fa-stream"></i>Update Employee</a></li>
-      <li><a href="#"><i class="fas fa-stream"></i>Delete Patient</a></li>
+      <li><a href="delete_patient.php"><i class="fas fa-stream"></i>Delete Patient</a></li>
 
     </ul>
     </div>

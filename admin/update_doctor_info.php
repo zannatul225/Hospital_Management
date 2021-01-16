@@ -107,13 +107,13 @@
 
       <!--Update emplyee information-->
     <div style="margin-top: 4%; margin-left:25%; margin-right:10%; font-size: 40px;font-weight: bold; padding:15px; background: #D5DBDB">
-    <h1>Update employee Information</h1>
+    <h3>Update Doctor Information</h3>
 
-    <input type="text" name="e_id" placeholder="Employee_id" >
+    <input type="text" name="d_id" placeholder="Doctor ID" >
 
-    <input type="text" name="shift"  placeholder="shift">
+    <input type="text" name="phn"  placeholder="Phone No">
 
-    <input type="text" name="desig"  placeholder="desig">
+    <input type="text" name="add"  placeholder="address">
 
     <button type="submit" name="submit">Update</button>
     </form>
@@ -126,25 +126,26 @@
     if (isset($_POST['submit'])) {
 
       //Update emplyee information
-    $e_id = mysqli_real_escape_string($db, $_POST['e_id']);
-    $shift = mysqli_real_escape_string($db, $_POST['shift']);
-    $desig = mysqli_real_escape_string($db, $_POST['desig']);
+    $d_id = mysqli_real_escape_string($db, $_POST['d_id']);
+    $phn = mysqli_real_escape_string($db, $_POST['phn']);
+    $add = mysqli_real_escape_string($db, $_POST['add']);
 
-    $sql = "UPDATE employee SET Shift = '$shift', Designation = '$desig' WHERE E_ID = '$e_id';";
+    $sql = "UPDATE doctor SET D_Phone_no = '$phn', D_Address = '$add' WHERE D_ID = '$d_id';";
     mysqli_query($db, $sql);
     ?>
 
         <div style="margin-top: 4%; margin-left:25%; margin-right:10%; font-size: 40px;font-weight: bold; padding:15px; background: #D5DBDB">
-          <h1 style="margin:0px; padding:0px;">Updated info of Employee</h1>
+          <h3 style="margin:0px; padding:0px;">Updated info of Doctor</h3>
           <?php
-          $sql = "SELECT * FROM employee WHERE E_ID = '$e_id';";
+          $sql = "SELECT * FROM doctor WHERE D_ID = '$d_id';";
           $res = mysqli_query($db,$sql);
 
           $row = mysqli_fetch_array($res);
 
-            echo "Employee ID: " . $row["E_ID"];
-            echo "<br>Shift: " . $row["Shift"];
-            echo "<br>Test Report: "  . $row["Designation"];
+            echo "Doctor ID: " . $row["D_ID"];
+            echo "Doctor Name: " . $row["D_Name"];
+            echo "<br>Updated Phone No: " . $row["D_Phone_no"];
+            echo "<br>Updated Address: "  . $row["D_Address"];
             ?>
           </div>
             <?php

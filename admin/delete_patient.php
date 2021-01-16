@@ -107,15 +107,10 @@
 
       <!--Update emplyee information-->
     <div style="margin-top: 4%; margin-left:25%; margin-right:10%; font-size: 40px;font-weight: bold; padding:15px; background: #D5DBDB">
-    <h1>Update employee Information</h1>
+    <h3>Delete Patient Info</h3>
 
-    <input type="text" name="e_id" placeholder="Employee_id" >
-
-    <input type="text" name="shift"  placeholder="shift">
-
-    <input type="text" name="desig"  placeholder="desig">
-
-    <button type="submit" name="submit">Update</button>
+    <input type="text" name="p_id" placeholder="Patient ID" >
+    <button type="submit" name="submit">Delete</button>
     </form>
     </div>
 
@@ -125,31 +120,20 @@
     include_once '../db.php';
     if (isset($_POST['submit'])) {
 
-      //Update emplyee information
-    $e_id = mysqli_real_escape_string($db, $_POST['e_id']);
-    $shift = mysqli_real_escape_string($db, $_POST['shift']);
-    $desig = mysqli_real_escape_string($db, $_POST['desig']);
+      //Delete patient information
+    $p_id = mysqli_real_escape_string($db, $_POST['p_id']);
 
-    $sql = "UPDATE employee SET Shift = '$shift', Designation = '$desig' WHERE E_ID = '$e_id';";
+
+    $sql = "DELETE * FROM patient WHERE P_ID = '$p_id';";
     mysqli_query($db, $sql);
     ?>
+    <div style="margin-top: 4%; margin-left:25%; margin-right:10%; font-size: 40px;font-weight: bold; padding:15px; background: #D5DBDB">
+      <h3 style="margin:0px; padding:0px;">Information Deleted Successfully!!</h3>
+    </div>
 
-        <div style="margin-top: 4%; margin-left:25%; margin-right:10%; font-size: 40px;font-weight: bold; padding:15px; background: #D5DBDB">
-          <h1 style="margin:0px; padding:0px;">Updated info of Employee</h1>
-          <?php
-          $sql = "SELECT * FROM employee WHERE E_ID = '$e_id';";
-          $res = mysqli_query($db,$sql);
-
-          $row = mysqli_fetch_array($res);
-
-            echo "Employee ID: " . $row["E_ID"];
-            echo "<br>Shift: " . $row["Shift"];
-            echo "<br>Test Report: "  . $row["Designation"];
-            ?>
-          </div>
-            <?php
-          }
-       ?>
+    <?php
+  }
+    ?>
 
   </body>
 </html>
