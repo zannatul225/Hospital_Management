@@ -91,23 +91,6 @@
 
     </style>
 
-    <script>
-    function showUser(str) {
-      if (str == "") {
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-      } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("txtHint").innerHTML = this.responseText;
-          }
-        };
-        xmlhttp.open("GET","DoctorDetails.php?q="+str,true);
-        xmlhttp.send();
-      }
-    }
-    </script>
   </head>
   <body>
 
@@ -133,7 +116,7 @@
     <div style="margin-top: 4%; margin-left:25%; margin-right:10%; font-size: 40px;font-weight: bold; padding:15px; background: #D5DBDB">
     <input type="text" name="p_id" placeholder="Patient ID:">
     <input type="text" name="t_r" placeholder="Test Report:">
-    <button type="submit" name="submit">Update</button></h3>
+    <button type="submit" name="submit">Update</button>
 
     <?php
     include_once '../db.php';
